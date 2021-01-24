@@ -1,32 +1,35 @@
+@import './Vars.scss';
+@import './Media.scss';
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 body {
-    background-color: #8BC34A;
+    background-color: $main-color;
     background-repeat: no-repeat;
     background-image: linear-gradient(#FFCC70 0%, #8BC34A 46%, #2A9D8F 100%);
-    font-family: 'Mulish', sans-serif;
+    font-family: $theme-font;
 }
-.input {
-    background-color: rgba(255, 255, 255, 0.1);
-    /* background-image: url(./img/1x/baseline_search_white_18dp.png); */
-    background-repeat: no-repeat;
-    background-size: 23px;
-    background-position-x: 20px;
-    background-position-y: center;
-    border: 2px solid white;
-    border-radius: 25px;
-    color: white;
-    font-family: 'Mulish', sans-serif;
-    font-size: 1.2rem;
-    height: 50px;
-    padding: 0px 50px;
-    outline: none;
-    margin-top: 12px;
-    width: 70%;
+/* ::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
 }
-::placeholder {
-    color: white;
+::-webkit-scrollbar {
+    width: 8px; 
+    height: 8px;   
+    background:rgba(255,255,255,.4);
+    border-radius: 4px;
+}
+::-webkit-scrollbar:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar:hover:active {
+    background: #999;
+}
+ */
+::-webkit-scrollbar {
+    display: none;
 }
