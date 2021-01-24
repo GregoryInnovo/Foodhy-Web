@@ -1,5 +1,32 @@
-body {
+* {
+    box-sizing: border-box;
     margin: 0;
-    background-color: blue;
+    padding: 0;
+}
+body {
+    background-color: #8BC34A;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(#FFCC70 0%, #8BC34A 46%, #2A9D8F 100%);
+    font-family: 'Mulish', sans-serif;
+}
+.input {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* background-image: url(./img/1x/baseline_search_white_18dp.png); */
+    background-repeat: no-repeat;
+    background-size: 23px;
+    background-position-x: 20px;
+    background-position-y: center;
+    border: 2px solid white;
+    border-radius: 25px;
+    color: white;
+    font-family: 'Mulish', sans-serif;
+    font-size: 1.2rem;
+    height: 50px;
+    padding: 0px 50px;
+    outline: none;
+    margin-top: 12px;
+    width: 70%;
+}
+::placeholder {
     color: white;
 }

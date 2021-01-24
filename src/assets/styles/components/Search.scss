@@ -1,0 +1,19 @@
+$blanco: white;
+// $font-size: $font-size;
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.main {
+    @extend .flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 300px;
+}
+.main__title {
+    text-align: center;
+    color: $blanco;
+    font-size: 1.8rem;
+}
