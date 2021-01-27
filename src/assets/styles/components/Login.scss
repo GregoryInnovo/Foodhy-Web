@@ -1,0 +1,119 @@
+@import '../Vars.scss';
+@import '../Media.scss';
+
+.login {
+    @extend .flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 30px;
+    min-height: calc(100vh - 200px);
+}
+.login__container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid $blanco;
+    border-radius: 40px;
+    color: $blanco;
+    padding: 60px 68px 40px;
+    min-height: 700px;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
+    // width: calc(100% / 2);
+}
+.login__container--form {
+    display: flex;
+    flex-direction: column;
+}
+.login__container--form label {
+    font-size: 14px;
+}
+.login__container--form > .input {
+  background-color: transparent;
+  border-bottom: 2px solid white;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  color: white;
+  font-family: 'Muli', sans-serif;
+  font-size: 16px;
+  height: 50px;
+  margin-bottom: 20px;
+  outline: none;
+  padding: 0px 20px;
+  min-width: 100%;
+}
+.login__container--remember-me {
+    color: $blanco;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.login__container--remember-me a {
+    color: $blanco;
+    font-size: 14px;
+    text-decoration: none;
+}
+.login__container--remember-me a:hover {
+    text-decoration: underline;
+}
+.login__container--social-media {
+    height: 100px;
+}
+.login__container--social-media > div {
+    @extend .flex;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.login__container--social-media > div > img {
+    width: 30px;
+    margin-right: 10px;
+}
+.login__container--register {
+    // font-size: 1.6rem;
+    font-size: 14px;
+}
+.login__container--register a {
+    color: $blanco;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+}
+.login__container--register-enter{
+    font-size: 1rem;
+    text-align: center;
+}
+.login__container--register-enter a {
+    color: $blanco;
+    text-decoration: none;
+}
+.login__container--register a:hover {
+    text-decoration: underline;
+}
+.input__login {
+    background-color: transparent;
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 2px solid $blanco;
+    font-size: 1rem;
+    font-family: 'Mulish', sans-serif;
+    margin-bottom: 20px;
+    padding: 0px 20px;
+    outline: none;
+    height: 50px;
+}
+.button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 25px;
+    color: $blanco;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: 'Mulish', sans-serif;
+    height: 50px;
+    letter-spacing: 1px;
+    margin: 10px 0px;
+}
