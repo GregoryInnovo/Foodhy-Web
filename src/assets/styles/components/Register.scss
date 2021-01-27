@@ -1,0 +1,31 @@
+@import '../Vars.scss';
+
+// .register {
+//     background-image: #181818;
+//     display: flex;
+//     align-items: center;
+//     flex-direction: column;
+//     justify-content: center;
+//     padding: 0px 30px;
+//     min-height: calc(100vh - 200px);
+// }
+.login__container--register {
+    font-size: 1.6rem;
+}
+.login__container--register a {
+    color: $blanco;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+}
+.login__container--register-enter{
+    font-size: 1rem;
+    text-align: center;
+}
+.login__container--register-enter a {
+    color: $blanco;
+    text-decoration: none;
+}
+.login__container--register a:hover {
+    text-decoration: underline;
+}
