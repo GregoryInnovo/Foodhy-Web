@@ -2,13 +2,9 @@ import React, { Fragment } from 'react';
 import '../assets/styles/components/Login.scss';
 import googleIcon from '../assets/static/google-g-icon-9.jpg';
 import TwitterIcon from '../assets/static/Twitter_logo_white.png';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 const Login = () => (
     <Fragment>
-
-    <Header />
     <section className="login">
         <section className="login__container">
             <h2>Inicia Sesión</h2>
@@ -30,7 +26,6 @@ const Login = () => (
             <p className="login__container--register">No tienes nunguna cuenta <a href="registro.html">Regístrate</a></p>
         </section>
     </section>
-    <Footer />
     </Fragment>
 );
 
