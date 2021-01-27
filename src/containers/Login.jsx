@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import '../assets/styles/components/Login.scss';
 import googleIcon from '../assets/static/google-g-icon-9.jpg';
 import TwitterIcon from '../assets/static/Twitter_logo_white.png';
@@ -23,7 +24,13 @@ const Login = () => (
                 <div><img src={googleIcon} alt="Google" />Inicia sesión con Google</div>
                 <div><img src={TwitterIcon} alt="Twitter" />Inicia sesión con Twitter</div>
             </section>
-            <p className="login__container--register">No tienes nunguna cuenta <a href="registro.html">Regístrate</a></p>
+            <p className="login__container--register">
+                No tienes nunguna cuenta
+                <br/> 
+                <Link to="/register">
+                    Regístrate
+                </Link>
+            </p>
         </section>
     </section>
     </Fragment>
