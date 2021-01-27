@@ -10,7 +10,7 @@ import '../assets/styles/App.scss';
 
 const API = 'http://localhost:3000/initialState';
 
-const App = () => {
+const Home = () => {
     const initialState = useInitialState(API);
     
     for (const e in initialState.trends.type)
@@ -82,4 +82,4 @@ const App = () => {
         </div>
     );
 }
-export default App;
+export default Home;
