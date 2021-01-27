@@ -5,40 +5,76 @@ import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
 import CarouselItem from '../components/CarouselItem';
 import Footer from '../components/Footer';
+import useInitialState from '../hooks/useInitialState';
 import '../assets/styles/App.scss';
 
-const App = () => {
-    const [videos, setVideos] = useState({ mylist: [], trends: [], originals: [] });
-    useEffect(() => {
-        fetch('http://localhost:3000/initialState')
-         .then(response => response.json())
-         .then(data => setVideos(data))
-    }, []);
+const API = 'http://localhost:3000/initialState';
 
-    return(
+const App = () => {
+    const initialState = useInitialState(API);
+    
+    for (const e in initialState.trends.type)
+        console.log(e);
+
+    return initialState.length === 0 ? <h1>Loading...</h1> : (
         <div className="App">
             <Header />
             <Search />
 
-            {videos.mylist.length > 0 && 
+{/*             {initialState.mylist.length > 0 && 
                 <Categories title="Frutas">
                     <Carousel>
-                        <CarouselItem />
+                        {initialState.mylist.map(item => {
+                            <CarouselItem key={item.id} {...item} />   
+                        })}
                     </Carousel>
                 </Categories>
             }
 
             <Categories title="Nuevos">
                 <Carousel>
-                    {videos.trends.map(item =>
+                    {initialState.trends.map(item => (
                         <CarouselItem key={item.id} {...item}/>
-                    )}
+                    ))}
                 </Carousel>
             </Categories>
 
             <Categories title="Próximamente">
                 <Carousel>
-                    <CarouselItem />
+                    {initialState.originals.map(item => (
+                        <CarouselItem key={item.id} {...item} />
+                    ))}
+                </Carousel>
+            </Categories> */}
+
+
+            {
+
+            }
+
+            {initialState.mylist.length > 0 && 
+                <Categories title="Frutas">
+                    <Carousel>
+                        {initialState.mylist.map(item => {
+                            <CarouselItem key={item.id} {...item} />   
+                        })}
+                    </Carousel>
+                </Categories>
+            }
+
+            <Categories title="Nuevos">
+                <Carousel>
+                    {initialState.trends.map(item => (
+                        <CarouselItem key={item.id} {...item}/>
+                    ))}
+                </Carousel>
+            </Categories>
+
+            <Categories title="Próximamente">
+                <Carousel>
+                    {initialState.originals.map(item => (
+                        <CarouselItem key={item.id} {...item} />
+                    ))}
                 </Carousel>
             </Categories>
 
