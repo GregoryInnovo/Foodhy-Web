@@ -10,32 +10,62 @@ import '../assets/styles/App.scss';
 const Home = ({ myList, trends, originals }) => {    
     return (
         <>
-            <Search />
-            {myList.length > 0 && 
+{/*             <Search />
+            {myList.length > 0 && (
                 <Categories title="Frutas">
                     <Carousel>
-                        {myList.map(item => {
-                            <CarouselItem key={item.id} {...item} />   
+                        {myList.map((item) => {
+                            <CarouselItem key={`${item.id}_myList`} {...item} />   
                         })}
                     </Carousel>
                 </Categories>
-            }
+            )}
 
             <Categories title="Nuevos">
                 <Carousel>
-                    {trends.map(item => (
-                        <CarouselItem key={item.id} {...item}/>
+                    {trends.map((item) => (
+                        <CarouselItem key={`${item.id}_trends`} {...item}/>
                     ))}
                 </Carousel>
             </Categories>
 
             <Categories title="Próximamente">
                 <Carousel>
-                    {originals.map(item => (
-                        <CarouselItem key={item.id} {...item} />
+                    {originals.map((item) => (
+                        <CarouselItem key={`${item.id}_originals`} {...item} />
                     ))}
                 </Carousel>
             </Categories>
+ */}
+
+            <Search />
+			{myList.length > 0 && (
+				<Categories title='Mi Lista'>
+					<Carousel>
+						{myList.map((item) => (
+                            <CarouselItem 
+                            key={`${item.id}_myList`} 
+                            {...item} 
+                            isList
+                        />
+						))}
+					</Carousel>
+				</Categories>
+			)}
+			<Categories title='Nuevos'>
+				<Carousel>
+					{trends.map((item) => (
+						<CarouselItem key={`${item.id}_trends`} {...item} />
+					))}
+				</Carousel>
+			</Categories>
+			<Categories title='Próximamente'>
+				<Carousel>
+					{originals.map((item) => (
+						<CarouselItem key={`${item.id}_originals`} {...item} />
+					))}
+				</Carousel>
+			</Categories>
         </>
     );
 }
@@ -45,6 +75,6 @@ const mapStateToProps = state => {
         myList: state.myList,
         trends: state.trends,
         originals: state.originals,
-    };
+    }
 };
 export default connect(mapStateToProps, null) (Home);
