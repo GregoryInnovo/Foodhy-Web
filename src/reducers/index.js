@@ -2,7 +2,11 @@ const reducer = (state, action) => {
 
     switch (action.type) {
         case 'SET_FAVORITE':
-            return {
+        if(state.myList.filter(el => el.id === action.payload.id).length !==0){
+            return state;
+        }
+        
+        return {
                 ...state,
                 myList: [...state.myList, action.payload]
             }
@@ -10,6 +14,11 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 myList: state.myList.filter(items => items.id !== action.payload)
+            }
+        case 'LOGIN_REQUEST':
+            return {
+                ...state,
+                user: action.payload,
             }
         default: 
             return state;

@@ -1,10 +1,12 @@
 import React, { Fragment, useState } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { loginRequest } from '../actions'
 import '../assets/styles/components/Login.scss';
 import googleIcon from '../assets/static/google-g-icon-9.jpg';
 import TwitterIcon from '../assets/static/Twitter_logo_white.png';
 
-const Login = () => {
+const Login = (props) => {
     
     const [form, setValues] = useState({
        email: '', 
@@ -19,7 +21,8 @@ const Login = () => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        console.log(form);
+        props.loginRequest(form);
+        props.history.push('/');
     }
 
     return (
@@ -42,7 +45,7 @@ const Login = () => {
                         placeholder="Contraseña" 
                         onChange={handleInput}
                     />
-                    <button className="button">Iniciar sesión</button>
+                    <button className="button" type='submit'>Iniciar sesión</button>
                     <div className="login__container--remember-me">
                         <label>
                             <input type="checkbox" id="cbox1" value="checkbox" />Recuérdame
@@ -65,5 +68,8 @@ const Login = () => {
         </section>
         </Fragment>
 )};
+const mapDispatchToProps = {
+    loginRequest,
+};
 
-export default Login;
+export default connect(null, mapDispatchToProps) (Login);
