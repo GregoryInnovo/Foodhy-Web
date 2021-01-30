@@ -3,6 +3,7 @@
 
 .login {
     @extend .flex;
+    background-image: linear-gradient(#FFCC70 0%, #8BC34A 46%, #2A9D8F 100%);
     justify-content: center;
     flex-direction: column;
     padding: 0px 30px;

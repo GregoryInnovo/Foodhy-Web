@@ -18,7 +18,6 @@ const Player = props => {
     // if(loading)
     //     return <h2>Cargando...</h2>
 
-
     return hasPlaying ? (
         <div className="Player">
             <video muted controls autoPlay>

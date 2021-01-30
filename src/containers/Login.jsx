@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import Header from '../components/Header';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { loginRequest } from '../actions'
@@ -27,45 +28,46 @@ const Login = (props) => {
 
     return (
         <Fragment>
-        <section className="login">
-            <section className="login__container">
-                <h2>Inicia Sesión</h2>
-                <form className="login__container--form" onSubmit={handleSubmit}>
-                    <input 
-                        name="email" 
-                        className="input__login" 
-                        type="text" 
-                        placeholder="Correo" 
-                        onChange={handleInput}
+            <Header isLogin />
+            <section className="login">
+                <section className="login__container">
+                    <h2>Inicia Sesión</h2>
+                    <form className="login__container--form" onSubmit={handleSubmit}>
+                        <input 
+                            name="email" 
+                            className="input__login" 
+                            type="text" 
+                            placeholder="Correo" 
+                            onChange={handleInput}
+                            />
+                        <input 
+                            name="password" 
+                            className="input__login" 
+                            type="password" 
+                            placeholder="Contraseña" 
+                            onChange={handleInput}
                         />
-                    <input 
-                        name="password" 
-                        className="input__login" 
-                        type="password" 
-                        placeholder="Contraseña" 
-                        onChange={handleInput}
-                    />
-                    <button className="button" type='submit'>Iniciar sesión</button>
-                    <div className="login__container--remember-me">
-                        <label>
-                            <input type="checkbox" id="cbox1" value="checkbox" />Recuérdame
-                        </label>
-                        <a href="#">Olvidé mi contraseña</a>
-                    </div>
-                </form>
-                <section className="login__container--social-media">
-                    <div><img src={googleIcon} alt="Google" />Inicia sesión con Google</div>
-                    <div><img src={TwitterIcon} alt="Twitter" />Inicia sesión con Twitter</div>
+                        <button className="button" type='submit'>Iniciar sesión</button>
+                        <div className="login__container--remember-me">
+                            <label>
+                                <input type="checkbox" id="cbox1" value="checkbox" />Recuérdame
+                            </label>
+                            <a href="#">Olvidé mi contraseña</a>
+                        </div>
+                    </form>
+                    <section className="login__container--social-media">
+                        <div><img src={googleIcon} alt="Google" />Inicia sesión con Google</div>
+                        <div><img src={TwitterIcon} alt="Twitter" />Inicia sesión con Twitter</div>
+                    </section>
+                    <p className="login__container--register">
+                        ¿No tienes ninguna cuenta?
+                        <br/> 
+                        <Link to="/register">
+                            Regístrate
+                        </Link>
+                    </p>
                 </section>
-                <p className="login__container--register">
-                    ¿No tienes ninguna cuenta?
-                    <br/> 
-                    <Link to="/register">
-                        Regístrate
-                    </Link>
-                </p>
             </section>
-        </section>
         </Fragment>
 )};
 const mapDispatchToProps = {
