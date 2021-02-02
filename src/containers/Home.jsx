@@ -5,41 +5,13 @@ import Search from '../components/Search';
 import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
 import CarouselItem from '../components/CarouselItem';
-import useInitialState from '../hooks/useInitialState';
 import '../assets/styles/App.scss';
 
 const Home = ({ myList, trends, originals }) => {    
     return (
         <>
-{/*             <Search />
-            {myList.length > 0 && (
-                <Categories title="Frutas">
-                    <Carousel>
-                        {myList.map((item) => {
-                            <CarouselItem key={`${item.id}_myList`} {...item} />   
-                        })}
-                    </Carousel>
-                </Categories>
-            )}
-
-            <Categories title="Nuevos">
-                <Carousel>
-                    {trends.map((item) => (
-                        <CarouselItem key={`${item.id}_trends`} {...item}/>
-                    ))}
-                </Carousel>
-            </Categories>
-
-            <Categories title="Próximamente">
-                <Carousel>
-                    {originals.map((item) => (
-                        <CarouselItem key={`${item.id}_originals`} {...item} />
-                    ))}
-                </Carousel>
-            </Categories>
- */}
             <Header />
-            <Search />
+            <Search isHome />
 			{myList.length > 0 && (
 				<Categories title='Mi Lista'>
 					<Carousel>
