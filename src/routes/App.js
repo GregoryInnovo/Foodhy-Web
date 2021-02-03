@@ -6,6 +6,7 @@ import Login from '../containers/Login';
 import Register from '../containers/Register';
 import NotFound from '../containers/NotFound';
 import Player from '../containers/Player';
+import Profile from '../containers/Profile';
 import Layout from '../components/Layout';
 
 // return explicito ()
@@ -17,6 +18,7 @@ const App = () => (
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/player/:id" component={Player} />
+            <Route exact path="/profile" component={Profile} />
             <Route component={NotFound} />
         </Switch>
     </Layout>

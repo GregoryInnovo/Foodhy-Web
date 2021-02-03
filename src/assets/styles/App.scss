@@ -13,7 +13,7 @@ body {
     font-family: $theme-font;
 }
 .button {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
     border: none;
     border-radius: 25px;
     color: $blanco;
@@ -45,4 +45,103 @@ body {
  */
 ::-webkit-scrollbar {
     display: none;
+}
+
+.container-row {
+    margin: 0 auto; 
+    display:flex;
+    flex-direction: row;
+    width: 80%;
+    align-items: center;
+    color: rgb(26, 25, 25);
+    text-align: center;
+    padding-top: 5%;
+    padding-right: 2%; 
+}
+
+.container-image {
+    height: 250px; 
+    width: 250px;
+    margin-right: 4%;
+}
+.photo-perfil {
+    width: 250px; 
+    height: 250px;
+    object-fit : cover;
+    border-radius: 50%; 
+}
+.container-perfil {
+    text-align: left;
+    margin-left: 8px;
+    width: 105%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.027);
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    padding-top: 10%;
+    font-weight: 600;   
+}
+.text-perfil-name {
+    text-align: justify;
+    margin-top: 12px;
+}
+
+
+/* FOOOTER2 */
+
+.nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 55px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    display: flex;
+    overflow-x: auto;
+}
+
+.nav__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    min-width: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: sans-serif;
+    font-size: 13px;
+    color: #444444;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.nav__link:hover {
+    background-color: #eeeeee;
+}
+
+.nav__link--active {
+    color: #009578;
+}
+
+.nav__icon {
+    font-size: 18px;
+}
+
+.nav__link--press {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    min-width: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: sans-serif;
+    font-size: 13px;
+    color: #e92222;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.1s ease-in-out;
 }

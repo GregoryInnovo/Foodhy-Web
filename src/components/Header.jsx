@@ -42,12 +42,19 @@ const Header = props => {
                 <ul>
 
                     {hasUser ? 
-                        <li><a href="/#">{user.name}</a></li>
-                        :null
+                        // <li><a href="/#">{user.name}</a></li>
+                        <li>
+                            <Link to="/profile">
+                                Profile
+                            </Link>
+                        </li>
+                        : null
                     }
 
                     {hasUser ? 
-                        <li><a href="#logout" onClick={handleLogout}>Cerrar Sesión</a></li>
+                        <li>
+                            <Link to="/login" onClick={handleLogout}>Cerrar Sesión</Link>
+                        </li>
                         :
                         <li>
                             <Link to="/login">
